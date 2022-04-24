@@ -29,14 +29,12 @@ def main():
   us = spark.read.parquet("/datasets/yelp/parquet/user.parquet")
 
   # part 1
-  ans1 = question1(bs)
-  print(f"Question 1:\n{ans1}")
+  question1(bs)
 
-  ans2 = question2(bs)
-  print(f"Question 2:\n{ans2}")
+  question2(bs)
 
-  ans3 = question3(us)
-  print(f"Question 3:\n{ans3}")
+  influencers = question3(us)
+  print(f"Found Influencers:\n{influencers.show()}")
 
   ans4 = question4(rs, bs, ans3)
   print(f"Question 4:\n{ans4}")
