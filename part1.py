@@ -12,8 +12,7 @@ def question1(bs):
   should be in the form of a Spark DataFrame with
   one value representing the count.
   """
-  ans = bs.agg(func.sum('review_count'))\
-          .collect()
+  ans = bs.agg(func.sum('review_count'))
   return ans
 
 def question2(bs):
@@ -26,8 +25,7 @@ def question2(bs):
   """
   ans = bs.filter(bs.stars==5)\
           .filter(bs.review_count >= 1000)\
-          .select('name', 'stars', 'review_count')\
-          .collect()
+          .select('name', 'stars', 'review_count')
   return ans
 
 def question3(us):
@@ -37,8 +35,7 @@ def question3(us):
   should be in the form of DataFrame of user id.
   """
   ans = us.filter(us.review_count > 1000)\
-          .select('user_id')\
-          .collect()
+          .select('user_id')
   return ans
 
 def question4(rs, bs, inf):

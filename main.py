@@ -30,19 +30,19 @@ def main():
 
   # part 1
   ans1 = question1(bs)
-  print(ans1)
+  print(f"Question 1:\n{ans1}")
 
   ans2 = question2(bs)
-  print(ans2)
+  print(f"Question 2:\n{ans2}")
 
   ans3 = question3(us)
-  print(ans3)
+  print(f"Question 3:\n{ans3}")
 
   ans4 = question4(rs, bs, ans3)
-  print(ans4)
+  print(f"Question 4:\n{ans4}")
 
   ans5 = question5(bs)
-  print(ans5)
+  print(f"Question 5:\n{ans5}")
 
   # part 2
 
