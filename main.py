@@ -40,7 +40,7 @@ def main():
   print(f"Found Influencers:\n{influencers.show()}")
 
   print("Question 4" + "-"*10)
-  question4(rs, bs, ans3)
+  question4(rs, bs, influencers)
 
   print("Question 5" + "-"*10)
   question5(bs)
