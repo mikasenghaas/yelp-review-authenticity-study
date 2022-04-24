@@ -48,7 +48,7 @@ def question4(rs, bs, inf):
   inf_rev = rs.join(inf, ["user_id"], 'leftsemi')
 
   # find the distinct no of influencer users per business_id
-  ans = reviews_by_influencers\
+  ans = inf_rev\
           .groupBy('business_id')\
           .agg(countDistinct('user_id')\
           .alias('inf_count'))
