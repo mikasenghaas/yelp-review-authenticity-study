@@ -50,11 +50,11 @@ def question4(rs, bs, inf):
   # find the distinct no of influencer users per business_id
   ans = inf_rev\
           .groupBy('business_id')\
-          .agg(countDistinct('user_id')\
+          .agg(func.countDistinct('user_id')\
           .alias('inf_count'))
 
   # filter for businesses having more than 5 reviews
-  ans.filter(ans.influencer_count > 5).show()
+  ans.filter(ans.inf_count > 5).show()
 
 def question5(rs, us):
   """
