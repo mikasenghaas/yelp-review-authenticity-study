@@ -33,7 +33,7 @@ def question3(us):
   have written more than 1000 reviews. The output
   should be in the form of DataFrame of user id.
   """
-  influecners = us.filter(us.review_count > 1000)\
+  influencers = us.filter(us.review_count > 1000)\
                   .select('user_id')
   return influencers
 
@@ -54,9 +54,7 @@ def question4(rs, bs, inf):
           .alias('inf_count'))
 
   # filter for businesses having more than 5 reviews
-  ans = ans.filter(ans.influencer_count > 5)
-
-  return ans
+  ans.filter(ans.influencer_count > 5).show()
 
 def question5(rs, us):
   """
@@ -64,9 +62,9 @@ def question5(rs, us):
   ordered list of users based on the average star
   counts they have given in all their reviews.
   """
-  ans = us.join(rs, on='user_id')\
-          .groupBy(['user_id', 'name'])\
-          .agg(func.mean('stars').alias('average_rating'))\
-          .sort(func.desc('average_rating'), func.asc('name'))
+  us.join(rs, on='user_id')\
+    .groupBy(['user_id', 'name'])\
+    .agg(func.mean('stars').alias('average_rating'))\
+    .sort(func.desc('average_rating'), func.asc('name'))\
+    .show()
   
-  return ans
