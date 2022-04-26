@@ -11,6 +11,10 @@ from part1 import (
     question4,
     question5)
 
+from part2 import (
+    eda,
+    ht)
+
 def main():
   # setup
   conf = SparkConf()
@@ -46,6 +50,7 @@ def main():
   question5(rs, us)
 
   # part 2
+  eda()
 
 if __name__ == "__main__":
   main()
