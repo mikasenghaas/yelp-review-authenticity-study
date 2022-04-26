@@ -16,8 +16,7 @@ def eda(rs, bs):
           .filter(rest_rs.text.rlike('legitimate'))
   leg_ratio = auto.count() / restaurant_reviews.count()
 
-  print("Percentage of reviews with a variant of
-      legitimate: {auth_ratio}")
+  print("Percentage of reviews with a variant of legitimate: {auth_ratio}")
   
 def ht(rs, bs):
   pass
