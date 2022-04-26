@@ -50,7 +50,7 @@ def main():
   question5(bs)
 
   # part 2
-  eda()
+  eda(rs, bs)
 
 if __name__ == "__main__":
   main()
