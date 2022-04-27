@@ -10,9 +10,7 @@ from part1 import (
     question4,
     question5)
 
-from part2 import (
-    eda,
-    ht)
+from part2 import part2
 
 def main():
   # setup
@@ -49,7 +47,7 @@ def main():
   question5(rs, us)
 
   # part 2
-  eda(rs, bs)
+  part2(rs, bs)
 
 if __name__ == "__main__":
   main()
