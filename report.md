@@ -1,7 +1,7 @@
 # Yelp Review Authenticity Study
 ## Using PySpark for Large-Scale Data Analysis
 
-*Author: Jonas-Mika Senghaas (jsen@itu.dk), Date: 14.04.2022*
+*Author: Jonas-Mika Senghaas (jsen@itu.dk), Date: 27.04.2022*
 
 ## Project Description
 
@@ -427,8 +427,7 @@ Finally, we would like to challenge the central
 statement mentioned in the 
 [article](https://ny.eater.com/2019/1/18/18183973/authenticity-yelp-reviews-white-supremacy-trap):
 
-> Authenticity language is used to describe dif-
-> ferent characteristics for different cuisines
+> Authenticity language is used to describe different characteristics for different cuisines
 
 Extending this argument would mean, that it is
 hard for non-white restaurant owners to enter the
@@ -502,22 +501,21 @@ NON-EUROPEAN:
 
 The statement of the article, that the word
 authentic is differently connotated in european
-and non-european cuisines, seems to be wrong. The
-average rating of reviews containing some variant
-of the word authentic has shown no major
-disparities in the average ratings. Given this
-data, the statement therefore does not hold.
-However, it has to be said, that the methodology
-used within this project is rather simplistic. The
-entire analysis is based on the strong assumption
-that the primary factor influencing the star
-rating of a restaurant review is the word
-authentic, which does not have to hold. A review
-of a non-european cuisine might regard the
-restaurant to be authentic (in a positively
-connotated way), but still gives a low star
-rating, because of i.e. bad service). This
-argument obviously also holds in the opposite way.
+and non-european cuisines, could not be verified.
+The average rating of reviews containing some
+variant of the word authentic has shown no major
+disparities between european and non-european
+cuisines. However, he methodology used within this
+project is rather simplistic. The entire analysis
+is based on the strong assumption that the primary
+factor influencing the star rating of a restaurant
+review is the word authentic, which does not have
+to hold. A review of a non-european cuisine might
+regard the restaurant to be authentic (in
+a positively connotated way), but still gives
+a low star rating, because of i.e. bad service).
+This argument obviously also holds in the opposite
+way.
 
 A more thorough analysis of the reviews could shed
 more light onto the true meaning of the word
