@@ -1,4 +1,3 @@
-import argparse
 import pyspark as spark
 from pyspark import SparkConf
 from pyspark.sql import SparkSession
