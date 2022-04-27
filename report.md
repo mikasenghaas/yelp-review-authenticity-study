@@ -316,16 +316,15 @@ res_bus_exploded = res_bus_exploded.groupBy('single_categories').count()
 res_bus_exploded = res_bus_exploded.withColumnRenamed('count', 'review_count')
 
 # get auth review count per category
-auth_exploded = auth.withColumn('single_categories',
-    explode(split(col('categories'), ', ')))
-auth_exploded = auth_exploded.groupBy('single_categories').count()
-auth_exploded = auth_exploded.withColumnRenamed('count',
-    'authentic_review_count')
+auth_exploded = auth.withColumn('single_categories', explode(split(col('categories'), ', ')))\
+      .groupBy('single_categories')\
+      .count()\
+      .withColumnRenamed('count', 'authentic_review_count')
+
 
 # join and compute ratio of authentic reviews per category
-auth_ratio = res_bus_exploded.join(auth_exploded, on='single_categories')
-auth_ratio = auth_ratio.withColumn('auth_ratio',
-    auth_ratio.authentic_review_count / auth_ratio.review_count)
+auth_ratio = res_bus_exploded.join(auth_exploded, on='single_categories')\
+      .withColumn('auth_ratio', auth_ratio.authentic_review_count / auth_ratio.review_count)
 
 # show
 auth_ratio.sort('review_count', ascending=False).show()
@@ -340,14 +339,6 @@ descending order of the authentic ratio, showing
 the categories of restaurants that relatively have
 the most reviews containing the word authentic.
 
-```python
-# show only relevant categories
-categories = ['Mexican', 'Indian', 'Japanese', 'Italian', 'Chinese',
-    'Mexican', 'French', 'Greek']
-
-auth_ratio.filter(auth_ratio.single_categories.isin(categories))\
-          .sort('auth_ratio', ascending=False).show()
-```
 
 ```
 +--------------------+------------+----------------------+--------------------+
@@ -372,6 +363,15 @@ reviews that contain the word authentic. The next
 task is going to look at the rating of these
 reviews to check if there really is a geographical
 difference in the sentiment of the word authentic.
+
+```python
+# show only relevant categories
+categories = ['Mexican', 'Indian', 'Japanese', 'Italian', 'Chinese',
+    'Mexican', 'French', 'Greek']
+
+auth_ratio.filter(auth_ratio.single_categories.isin(categories))\
+          .sort('auth_ratio', ascending=False).show()
+```
 
 ```
 +-----------------+------------+----------------------+--------------------+
@@ -398,7 +398,7 @@ geographic attributes. It takes a collection of
 columns and applies aggregate expressions to all
 possible combinations of the grouping columns.
 
-```
+```python
 res_bus = res_bus.withColumn("auth_lang",
       res_bus.text.rlike('[Aa]uthentic[a-z]*)'))
 
@@ -440,7 +440,7 @@ the average star rating from all reviews
 containing authentic language in non-european and
 european cuisines.
 
-```
+```python
 # authentic reviews of european cuisine
 auth_exploded.filter(auth_exploded.single_categories.isin(european))\
              .groupBy('single_categories')\
