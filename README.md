@@ -1,4 +1,4 @@
-## Large Scale Data Analysis
+# Yelp Review Authenticity Study 
 
 Repository to store progress on Assignment 2 of
 course Large Scale Data Analysis.
@@ -20,4 +20,4 @@ non-white restaurant-owners in negative
 stereotypes. The task was to test the study by
 analysing large scale data (yelp reviews) using
 Spark in a distributed cluster of computing and
-storage nodes. 
+storage nodes.
